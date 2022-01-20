@@ -1,0 +1,7 @@
+{
+    "@@locale": "en",
+  "home": "Home",
+  "profile": "Profile",
+  "city": "City {name}",
+  "language": "Change language"
+}
