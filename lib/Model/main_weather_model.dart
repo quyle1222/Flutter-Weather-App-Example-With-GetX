@@ -1,3 +1,8 @@
+import 'dart:convert';
+
+import 'package:weather_app/Model/description_weather.dart';
+import 'package:weather_app/Model/weather_model.dart';
+
 class MainWeatherModel {
   double? temp;
   double? feels_like;

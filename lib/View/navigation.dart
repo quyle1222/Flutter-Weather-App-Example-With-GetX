@@ -14,7 +14,7 @@ class Navigation extends GetWidget {
   Widget build(BuildContext context) {
     return GetBuilder<NavigationController>(builder: (controller) {
       return Scaffold(
-        body: SafeArea(child: _getBody()),
+        body: Obx(() => _getBody()),
         bottomNavigationBar: GetBuilder<NavigationController>(
           builder: (controller) {
             return BottomNavigationBar(

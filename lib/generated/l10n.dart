@@ -70,10 +70,10 @@ class S {
     );
   }
 
-  /// `City {name}`
+  /// `{name} city`
   String city(Object name) {
     return Intl.message(
-      'City $name',
+      '$name city',
       name: 'city',
       desc: '',
       args: [name],
