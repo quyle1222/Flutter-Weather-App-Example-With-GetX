@@ -2,5 +2,10 @@
   "home": "Trang chủ",
   "profile": "Cá nhân",
   "city": "Thành phố {name}",
-  "language": "Đổi ngôn ngữ"
+  "language": "Đổi ngôn ngữ",
+  "account":"Tài khoản",
+  "password":"Mật khẩu",
+  "login":"Đăng nhập",
+  "hi":"Xin chào !",
+  "wellcome":"Chào mừng đã trở lại"
 }

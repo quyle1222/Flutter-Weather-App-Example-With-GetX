@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:intl/intl.dart';
 import 'package:weather_app/Controller/navigation_controller.dart';
 import 'package:weather_app/Controller/weather_controller.dart';
 import 'package:get/get.dart';
@@ -13,13 +12,12 @@ class HomeScreen extends GetWidget {
   NavigationController navigationController = Get.find<NavigationController>();
   HomeScreen({Key? key}) : super(key: key);
 
-  _handleChangeLanguage() {
+  _handleChangeLanguage() async {
     var tempLocate = Get.locale;
-    Locale locate = Locale("vi");
-    if (tempLocate == locate) {
-      locate = Locale("en");
-    }
-    Get.updateLocale(locate);
+    Locale locale = const Locale("vi");
+    tempLocate == locale ? locale = const Locale("en") : null;
+    await controller.getCurrentWeather("DaNang", locale.toString());
+    Get.updateLocale(locale);
   }
 
   @override
@@ -38,9 +36,7 @@ class HomeScreen extends GetWidget {
                     Column(
                       children: [
                         Text(
-                          S
-                              .of(context)
-                              .city(controller.weatherModel.name ?? ""),
+                          S.current.city(controller.weatherModel.name ?? ""),
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 25),
@@ -54,8 +50,11 @@ class HomeScreen extends GetWidget {
                               fontWeight: FontWeight.bold, fontSize: 50),
                         ),
                         Container(
-                          width: 100,
                           height: 50,
+                          padding: const EdgeInsets.symmetric(horizontal: 5),
+                          constraints: const BoxConstraints(
+                            minWidth: 120,
+                          ),
                           decoration: BoxDecoration(
                               color: Colors.amber,
                               border: Border.all(
@@ -76,7 +75,7 @@ class HomeScreen extends GetWidget {
                         ),
                       ],
                     ),
-                    const Text('ẢNH Ở ĐÂY')
+                    Text(controller.isLoading.value.toString())
                   ],
                 ),
               ),
@@ -110,7 +109,7 @@ class HomeScreen extends GetWidget {
                           const BorderRadius.all(Radius.circular(20))),
                   child: Center(
                       child: Text(
-                    S.of(context).language,
+                    S.current.language,
                   )),
                 ),
               )

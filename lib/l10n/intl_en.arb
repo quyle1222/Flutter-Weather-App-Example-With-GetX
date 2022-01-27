@@ -2,5 +2,11 @@
   "home": "Home",
   "profile": "Profile",
   "city": "{name} city",
-  "language": "Change language"
+  "language": "Change language",
+  "account":"Account",
+  "password":"Password",
+  "login":"Login",
+  "hi":"Hi again!",
+  "wellcome":"Welcome back you're been missed"
+
 }

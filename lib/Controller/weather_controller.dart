@@ -8,11 +8,14 @@ class WeatherController extends GetxController {
   ApiRequest api = ApiRequest();
   RxInt index = 0.obs;
   WeatherModel weatherModel = WeatherModel();
+  RxBool isLoading = false.obs;
+  late Rx<WeatherModel> weather = WeatherModel().obs;
 
   @override
   void onInit() {
     super.onInit();
-    getCurrentWeather("DaNang");
+    var lang = Get.locale.toString();
+    getCurrentWeather("DaNang", lang);
   }
 
   void changeIndex(int i) {
@@ -20,11 +23,25 @@ class WeatherController extends GetxController {
     update();
   }
 
-  void getCurrentWeather(String city) {
+  Future<void> getCurrentWeather(String city, String lang) async {
+    isLoading.value = true;
     String key = Constant().KEY;
-    WeatherService()
-        .getCurrentWeather("weather?q=$city&appid=$key&units=metric&lang=vi")
-        .then((value) => {weatherModel = value, update()})
-        .catchError((error) => {printError(info: "Error $error")});
+    await WeatherService()
+        .getCurrentWeather("weather?q=$city&appid=$key&units=metric&lang=$lang")
+        .then((value) => {
+              weatherModel = value,
+              isLoading.value = false,
+              weather.value = value,
+              update(),
+            })
+        .catchError((error) => {
+              printError(info: "Error $error"),
+              isLoading.value = false,
+            });
+    return;
+  }
+
+  void changeLoading(key, value) {
+    key.value = value;
   }
 }

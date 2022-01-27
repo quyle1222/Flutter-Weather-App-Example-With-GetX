@@ -27,11 +27,11 @@ class Navigation extends GetWidget {
                 items: [
                   _bottomNavigationBarItem(
                     icon: MaterialCommunityIcons.weather_partly_cloudy,
-                    label: S.of(context).home,
+                    label: S.current.home,
                   ),
                   _bottomNavigationBarItem(
                     icon: MaterialCommunityIcons.face_profile,
-                    label: S.of(context).profile,
+                    label: S.current.profile,
                   ),
                 ]);
           },
