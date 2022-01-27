@@ -48,8 +48,16 @@ class WeatherModel {
             .map((e) => DescriptionWeather.fromJson(e))
             .toList();
 
-  Map<String, dynamic> toJson() =>
-      {'timezone': timezone, 'id': id, 'name': name, 'cod': cod};
+  Map<String, dynamic> toJson() => {
+        'timezone': timezone,
+        'id': id,
+        'name': name,
+        'cod': cod,
+        "coord": coord!.toJson(),
+        "main": main!.toJson(),
+        "wind": wind!.toJson(),
+        "weather": weather!.map((e) => e.toJson()).toList()
+      };
 
   @override
   String toString() {

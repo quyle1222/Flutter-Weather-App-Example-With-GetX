@@ -32,6 +32,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "login": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
         "profile": MessageLookupByLibrary.simpleMessage("Cá nhân"),
-        "wellcome": MessageLookupByLibrary.simpleMessage("Chào mừng đã trở lại")
+        "welcome": MessageLookupByLibrary.simpleMessage("Chào mừng đã trở lại")
       };
 }

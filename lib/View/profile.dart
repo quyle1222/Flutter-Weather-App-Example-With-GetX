@@ -18,7 +18,7 @@ class ProfileScreen extends GetWidget {
         return SafeArea(
           child: Column(
             children: [
-              _wellcome(),
+              _welcome(),
               Center(
                 child: Container(
                   margin: const EdgeInsets.only(top: 20),
@@ -99,7 +99,7 @@ class ProfileScreen extends GetWidget {
     ));
   }
 
-  Widget _wellcome() {
+  Widget _welcome() {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 20),
       child: Column(
@@ -108,7 +108,7 @@ class ProfileScreen extends GetWidget {
             S.current.hi,
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
           ),
-          Text(S.current.wellcome)
+          Text(S.current.welcome)
         ],
       ),
     );

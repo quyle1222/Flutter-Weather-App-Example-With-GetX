@@ -32,7 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
-        "wellcome": MessageLookupByLibrary.simpleMessage(
+        "welcome": MessageLookupByLibrary.simpleMessage(
             "Welcome back you\'re been missed")
       };
 }

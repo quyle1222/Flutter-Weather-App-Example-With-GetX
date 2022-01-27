@@ -131,10 +131,10 @@ class S {
   }
 
   /// `Welcome back you're been missed`
-  String get wellcome {
+  String get welcome {
     return Intl.message(
       'Welcome back you\'re been missed',
-      name: 'wellcome',
+      name: 'welcome',
       desc: '',
       args: [],
     );

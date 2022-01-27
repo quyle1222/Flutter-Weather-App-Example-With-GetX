@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 
 class ApiRequest {
   Dio dio = Dio(BaseOptions(
-    baseUrl: "https://api.openweathermap.org/data/2.5/",
+    baseUrl: "http://139.180.128.230:8080/ofbizinterfacetest/api/v1",
     connectTimeout: 5000,
     receiveTimeout: 5000,
     headers: {"content-Type": "application/json"},
